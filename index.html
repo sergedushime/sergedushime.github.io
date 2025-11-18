@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISIT NATURAL - Explore Nature's Wonders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset and Setup */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text for contrast */
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ffe0b2; /* A soft orange/peach for headings */
+        }
+
+        a {
+            color: #81c784; /* A soft green for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #a5d6a7;
+        }
+
+        /* Header/Navigation */
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 0;
+            font-size: 2em;
+            color: #ffcc80; /* Brighter orange for logo */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc80;
+        }
+
+        /* Hero Section */
+        #hero {
+            /* USING ONE IMAGE FROM THE FOLDER FOR THE HERO BACKGROUND */
+            background-image: url('pro hd/alejandro-contreras-wTPp323zAEw-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            padding: 0 20px;
+        }
+
+        #hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #ffcc80;
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #81c784; /* Soft green */
+            color: #000000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #a5d6a7;
+            color: #333333;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #1a1a1a;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        #about h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1em;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #000000;
+        }
+
+        #gallery h3 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px; /* Fixed height for consistency */
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-title {
+            padding: 15px;
+            font-weight: bold;
+            color: #ffcc80;
+            font-size: 1.2em;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #1a1a1a;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        #contact h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #bbb;
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            #hero h2 {
+                font-size: 2.5em;
+            }
+
+            #hero p {
+                font-size: 1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin-bottom: 5px;
+            }
+
+            header .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">VISIT NATURAL</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Discover the Untamed Beauty of Nature</h2>
+            <p>Immerse yourself in breathtaking landscapes, vibrant wildlife, and serene moments.</p>
+            <a href="#gallery" class="cta-button">View Gallery</a>
+        </section>
+
+        <section id="about" class="container">
+            <h3>About VISIT NATURAL</h3>
+            <p>At VISIT NATURAL, we believe in the power of the natural world to inspire, rejuvenate, and connect us. Our mission is to showcase the planet's incredible biodiversity and stunning scenery, encouraging appreciation and conservation.</p>
+            <p>From majestic mountains to hidden forests, and the fascinating creatures that inhabit them, we bring you closer to nature's wonders.</p>
+        </section>
+
+        <section id="gallery" class="container">
+            <h3>Our Natural Wonders Gallery</h3>
+            <div class="image-grid">
+                <div class="gallery-item">
+                    <img src="pro hd/francesco-ZxNKxnR32Ng-unsplash.jpg" alt="Mountain Landscape">
+                    <div class="gallery-item-title">Mountain Heights</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pro hd/gary-bendig-6GMq7AGxNbE-unsplash.jpg" alt="Wildlife Portrait">
+                    <div class="gallery-item-title">Curious Wildlife</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pro hd/alejandro-contreras-wTPp323zAEw-unsplash.jpg" alt="Rocky Shoreline">
+                    <div class="gallery-item-title">Misty Shore</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pro hd/kevin-mueller-aeNg4YA41P8-unsplash.jpg" alt="Forest Path">
+                    <div class="gallery-item-title">Serene Forest</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pro hd/kar-ming-moo-Q_3WmguWgYg-unsplash.jpg" alt="Desert Sunset">
+                    <div class="gallery-item-title">Desert Sunset</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\USER\OneDrive\Desktop\pro hd\kevin-mueller-aeNg4YA41P8-unsplash.jpg" alt="Bird in Flight">
+                    <div class="gallery-item-title">Bird in Flight</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pro hd/amal-cr-FAVELcEQITU-unsplash.jpg" alt="Exotic Plant">
+                    <div class="gallery-item-title">Exotic Bloom</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pro hd/aslam-mac-QpmbWy5bwe4-unsplash.jpg" alt="River Landscape">
+                    <div class="gallery-item-title">Calm River</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h3>Contact Us</h3>
+            <p>Have questions or want to share your nature photos? We'd love to hear from you!</p>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:info@visitnatural.com">info@visitnatural.com</a></p>
+                <p>Follow us on social media: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 VISIT NATURAL. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
